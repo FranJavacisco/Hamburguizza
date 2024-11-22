@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamburguizza | Deliciosas pizzas y hamburguesas</title>
     <!-- Enlace al archivo CSS principal -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <!-- Navegación -->
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">Hamburguizza</div>
             <div class="nav-links">
-                <a href="./menu.html">Menu</a>
-                <a href="./contacto.html">Contacto</a>
-                <a href="./carrito.html">Carrito</a>
+                <a href="./paginas/menu.html">Menu</a>
+                <a href="./paginas/contacto.html">Contacto</a>
+                <a href="./paginas/carrito.html">Carrito</a>
                 <div class="cart-icon" id="cartIcon">
                     🛒
                     <span class="cart-count">0</span>
@@ -36,7 +38,7 @@
     <!-- Sección de Productos -->
     <section class="products">
         <h2>Nuestro Menú</h2>
-        
+
         <!-- Sección Pizzas -->
         <h3 class="category-title">Pizzas</h3>
         <div class="product-grid" id="pizzasGrid">
@@ -72,10 +74,157 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="./assets/js/carrito.js"></script>
-    <script src="./assets/js/chat.js"></script>
-    <script src="./assets/js/contacto.js"></script>
-    <script src="./assets/js/menu.js"></script>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <!-- Forma decorativa superior -->
+        <div class="footer-shape">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+                <path fill="var(--primary)" fill-opacity="1"
+                    d="M0,96L48,85.3C96,75,192,53,288,53.3C384,53,480,75,576,90.7C672,107,768,117,864,112C960,107,1056,85,1152,74.7C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z">
+                </path>
+            </svg>
+        </div>
+
+        <!-- Principal contenedor del footer -->
+        <div class="footer-content">
+            <!-- Grid principal -->
+            <div class="footer-grid">
+                <!-- Columna 1: Información de la empresa -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>Pizza & Burger</h2>
+                        <p class="footer-slogan">Sabores que crean momentos inolvidables</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="social-icon">📘</i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="social-icon">📸</i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="social-icon">🐦</i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="social-icon">📺</i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Información de contacto -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contáctanos</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="contact-icon">📍</i>
+                            <div>
+                                <p>Av. Principal #123</p>
+                                <p>Ciudad, País</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="contact-icon">📞</i>
+                            <div>
+                                <p>+1 234 567 890</p>
+                                <p>Lun - Dom: 11:00 - 23:00</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="contact-icon">✉️</i>
+                            <div>
+                                <p>info@pizzaburger.com</p>
+                                <p>ventas@pizzaburger.com</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Newsletter -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-description">Suscríbete para recibir ofertas especiales y novedades</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                            <button type="submit" class="newsletter-button">
+                                Suscribirse
+                            </button>
+                        </div>
+                    </form>
+                    <div class="newsletter-notice">
+                        Al suscribirte, aceptas recibir emails con ofertas y noticias
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Aplicaciones -->
+            <div class="app-section">
+                <div class="app-content">
+                    <h3>Descarga Nuestra App</h3>
+                    <p>Ordena fácilmente desde tu celular</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">
+                            <img src="/api/placeholder/120/40" alt="App Store">
+                        </a>
+                        <a href="#" class="app-button">
+                            <img src="/api/placeholder/120/40" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Pagos Aceptados -->
+            <div class="payment-section">
+                <h3>Métodos de Pago Aceptados</h3>
+                <div class="payment-methods">
+                    <span class="payment-icon">💳</span>
+                    <span class="payment-icon">💳</span>
+                    <span class="payment-icon">💳</span>
+                    <span class="payment-icon">💳</span>
+                </div>
+            </div>
+
+            <!-- Línea divisoria -->
+            <div class="footer-divider"></div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        © 2024 Pizza & Burger. Todos los derechos reservados.
+                    </div>
+                    <div class="legal-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos y Condiciones</a>
+                        <a href="#">Política de Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de scroll to top -->
+        <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
+            ⬆️
+        </button>
+    </footer>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/contacto.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
+
 </html>
