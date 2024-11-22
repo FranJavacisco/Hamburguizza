@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza & Burger | Deliciosas pizzas y hamburguesas</title>
+    <!-- Enlace al archivo CSS principal -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Pizza & Burger</div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#menu">Menú</a>
+                <a href="pages/contacto.html">Contacto</a>
+                <div class="cart-icon" id="cartIcon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Las mejores pizzas y hamburguesas</h1>
+            <p>Descubre sabores únicos hechos con ingredientes frescos</p>
+            <button class="cta-button">Ver Menú</button>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section class="products">
+        <h2>Nuestro Menú</h2>
+        
+        <!-- Sección Pizzas -->
+        <h3 class="category-title">Pizzas</h3>
+        <div class="product-grid" id="pizzasGrid">
+            <!-- El contenido se cargará dinámicamente con JavaScript -->
+        </div>
+
+        <!-- Sección Hamburguesas -->
+        <h3 class="category-title">Hamburguesas</h3>
+        <div class="product-grid" id="burgersGrid">
+            <!-- El contenido se cargará dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Carrito Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Carrito de Compras</h3>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Proceder al Pago</button>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-button" id="chatButton">💬</button>
+        <div class="chat-window" id="chatWindow">
+            <!-- El contenido del chat se cargará desde chat.js -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cart.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
