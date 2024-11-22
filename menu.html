@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburguizza | Nuestro Menú</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Hamburguizza</div>
+            <div class="nav-links">
+                <a href="./index.html">Inicio</a>
+                <a href="./menu.html" class="active">Menú</a>
+                <a href="./contacto.html">Contacto</a>
+                <a href="./carrito.html">Carrito</a>
+                <div class="cart-icon" id="cartIcon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección del Menú -->
+    <section class="menu-section">
+        <div class="menu-header">
+            <h1 class="menu-title">Nuestro Menú</h1>
+            <p class="menu-description">Descubre nuestras deliciosas pizzas y hamburguesas artesanales</p>
+            
+            <!-- Filtros del Menú -->
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="pizzas">Pizzas</button>
+                <button class="filter-btn" data-filter="burgers">Hamburguesas</button>
+                <button class="filter-btn" data-filter="vegetarian">Vegetariano</button>
+                <button class="filter-btn" data-filter="spicy">Picante</button>
+            </div>
+        </div>
+
+        <!-- Categoría: Pizzas -->
+        <div class="menu-category">
+            <h2 class="category-title">Pizzas</h2>
+            <div class="product-grid">
+                <!-- Pizza 1 -->
+                <div class="product-card" data-category="pizzas">
+                    <div class="badge popular">Más Vendida</div>
+                    <img src="/api/placeholder/250/200" alt="Pizza Margherita" class="product-image">
+                    <div class="product-info">
+                        <h3>Pizza Margherita</h3>
+                        <div class="product-tags">
+                            <span class="tag vegetarian">Vegetariana</span>
+                            <span class="tag">Clásica</span>
+                        </div>
+                        <p>Salsa de tomate, mozzarella fresca, albahaca y aceite de oliva extra virgen</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(128)</span>
+                            </div>
+                            <div class="price">$12.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Pizza 2 -->
+                <div class="product-card" data-category="pizzas,spicy">
+                    <div class="badge new">Nueva</div>
+                    <img src="/api/placeholder/250/200" alt="Pizza Diavola" class="product-image">
+                    <div class="product-info">
+                        <h3>Pizza Diavola</h3>
+                        <div class="product-tags">
+                            <span class="tag spicy">Picante</span>
+                            <span class="tag">Especialidad</span>
+                        </div>
+                        <p>Salsa de tomate, mozzarella, pepperoni picante, jalapeños y chile habanero</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(86)</span>
+                            </div>
+                            <div class="price">$14.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Pizza 3 -->
+                <div class="product-card" data-category="pizzas,vegetarian">
+                    <img src="/api/placeholder/250/200" alt="Pizza Veggie Supreme" class="product-image">
+                    <div class="product-info">
+                        <h3>Pizza Veggie Supreme</h3>
+                        <div class="product-tags">
+                            <span class="tag vegetarian">Vegetariana</span>
+                            <span class="tag">Saludable</span>
+                        </div>
+                        <p>Pimientos, champiñones, aceitunas, cebolla, tomate y queso vegano</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(92)</span>
+                            </div>
+                            <div class="price">$13.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Pizza 4 -->
+                <div class="product-card" data-category="pizzas">
+                    <img src="/api/placeholder/250/200" alt="Pizza 4 Quesos" class="product-image">
+                    <div class="product-info">
+                        <h3>Pizza 4 Quesos</h3>
+                        <div class="product-tags">
+                            <span class="tag">Premium</span>
+                            <span class="tag vegetarian">Vegetariana</span>
+                        </div>
+                        <p>Mozzarella, gorgonzola, parmesano y queso de cabra</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(156)</span>
+                            </div>
+                            <div class="price">$15.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoría: Hamburguesas -->
+        <div class="menu-category">
+            <h2 class="category-title">Hamburguesas</h2>
+            <div class="product-grid">
+                <!-- Hamburguesa 1 -->
+                <div class="product-card" data-category="burgers">
+                    <div class="badge popular">Favorita</div>
+                    <img src="/api/placeholder/250/200" alt="Classic Burger" class="product-image">
+                    <div class="product-info">
+                        <h3>Classic Burger</h3>
+                        <div class="product-tags">
+                            <span class="tag">Clásica</span>
+                            <span class="tag">Premium</span>
+                        </div>
+                        <p>Carne premium, lechuga, tomate, queso cheddar y salsa especial</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(234)</span>
+                            </div>
+                            <div class="price">$10.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Hamburguesa 2 -->
+                <div class="product-card" data-category="burgers,spicy">
+                    <div class="badge">Hot 🔥</div>
+                    <img src="/api/placeholder/250/200" alt="Spicy Mexican Burger" class="product-image">
+                    <div class="product-info">
+                        <h3>Spicy Mexican Burger</h3>
+                        <div class="product-tags">
+                            <span class="tag spicy">Picante</span>
+                            <span class="tag">Especialidad</span>
+                        </div>
+                        <p>Carne, guacamole, jalapeños, pico de gallo y salsa chipotle</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(178)</span>
+                            </div>
+                            <div class="price">$12.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Hamburguesa 3 -->
+                <div class="product-card" data-category="burgers,vegetarian">
+                    <img src="/api/placeholder/250/200" alt="Veggie Burger" class="product-image">
+                    <div class="product-info">
+                        <h3>Veggie Burger</h3>
+                        <div class="product-tags">
+                            <span class="tag vegetarian">Vegetariana</span>
+                            <span class="tag">Saludable</span>
+                        </div>
+                        <p>Medallón de lentejas, aguacate, lechuga, tomate y mayonesa vegana</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(145)</span>
+                            </div>
+                            <div class="price">$11.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Hamburguesa 4 -->
+                <div class="product-card" data-category="burgers">
+                    <div class="badge">Premium</div>
+                    <img src="/api/placeholder/250/200" alt="BBQ Bacon Burger" class="product-image">
+                    <div class="product-info">
+                        <h3>BBQ Bacon Burger</h3>
+                        <div class="product-tags">
+                            <span class="tag">Premium</span>
+                            <span class="tag">BBQ</span>
+                        </div>
+                        <p>Carne premium, tocino, cebolla caramelizada, queso y salsa BBQ</p>
+                        <div class="product-meta">
+                            <div class="rating">
+                                ⭐️⭐️⭐️⭐️⭐️
+                                <span class="rating-count">(198)</span>
+                            </div>
+                            <div class="price">$13.99</div>
+                        </div>
+                        <button class="add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito Modal -->
+    <div class="cart-modal" id="cartModal">
+        <!-- El contenido del carrito se cargará dinámicamente -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/carrito.js"></script>
+    <script src="./assets/js/chat.js"></script>
+    <script src="./assets/js/contacto.js"></script>
+    <script src="./assets/js/menu.js"></script>
+</body>
+</html>
