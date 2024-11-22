@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza & Burger | Carrito de Compras</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Pizza & Burger</div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="../index.html#menu">Menú</a>
+                <a href="./contacto.html">Contacto</a>
+                <div class="cart-icon active" id="cartIcon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Principal del Carrito -->
+    <section class="cart-section">
+        <h2 class="section-title">Tu Carrito de Compras</h2>
+
+        <!-- Contenedor Principal del Carrito -->
+        <div class="cart-container">
+            <!-- Productos del Carrito -->
+            <div class="cart-products">
+                <div class="cart-items" id="cartItems">
+                    <!-- Los items se cargarán dinámicamente -->
+                </div>
+
+                <!-- Mensaje de Carrito Vacío -->
+                <div class="empty-cart" id="emptyCart">
+                    <img src="/api/placeholder/200/200" alt="Carrito vacío" class="empty-cart-image">
+                    <h3>Tu carrito está vacío</h3>
+                    <p>¡Añade algunos productos deliciosos!</p>
+                    <a href="../index.html#menu" class="cta-button">Ver Menú</a>
+                </div>
+            </div>
+
+            <!-- Resumen del Pedido -->
+            <div class="order-summary">
+                <h3>Resumen del Pedido</h3>
+                
+                <!-- Detalles del Pedido -->
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span id="shipping">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Descuento</span>
+                        <span id="discount">-$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                </div>
+
+                <!-- Cupón de Descuento -->
+                <div class="coupon-container">
+                    <h4>¿Tienes un cupón?</h4>
+                    <div class="coupon-input">
+                        <input type="text" id="couponCode" placeholder="Ingresa tu código">
+                        <button id="applyCoupon" class="coupon-btn">Aplicar</button>
+                    </div>
+                    <div class="coupon-message" id="couponMessage"></div>
+                </div>
+
+                <!-- Opciones de Envío -->
+                <div class="shipping-options">
+                    <h4>Método de envío</h4>
+                    <div class="shipping-option">
+                        <input type="radio" name="shipping" id="delivery" value="delivery" checked>
+                        <label for="delivery">
+                            <span class="option-title">Envío a domicilio</span>
+                            <span class="option-price">$5.00</span>
+                        </label>
+                    </div>
+                    <div class="shipping-option">
+                        <input type="radio" name="shipping" id="pickup" value="pickup">
+                        <label for="pickup">
+                            <span class="option-title">Recoger en tienda</span>
+                            <span class="option-price">Gratis</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botón de Pago -->
+                <button class="checkout-button" id="checkoutButton">
+                    Proceder al Pago
+                </button>
+
+                <!-- Métodos de Pago Aceptados -->
+                <div class="payment-methods">
+                    <p>Aceptamos:</p>
+                    <div class="payment-icons">
+                        <span class="payment-icon">💳</span> <!-- Visa -->
+                        <span class="payment-icon">💳</span> <!-- Mastercard -->
+                        <span class="payment-icon">💳</span> <!-- American Express -->
+                        <span class="payment-icon">📱</span> <!-- Mobile Payment -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Productos Recomendados -->
+        <div class="recommended-products">
+            <h3>También te puede interesar</h3>
+            <div class="product-grid" id="recommendedGrid">
+                <!-- Los productos recomendados se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación de Eliminación -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <h4>Eliminar producto</h4>
+            <p>¿Estás seguro de que deseas eliminar este producto del carrito?</p>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel" id="cancelDelete">Cancelar</button>
+                <button class="modal-btn confirm" id="confirmDelete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <h4>Finalizar Compra</h4>
+            
+            <!-- Formulario de Pago -->
+            <form id="checkoutForm">
+                <!-- Información Personal -->
+                <div class="form-section">
+                    <h5>Información Personal</h5>
+                    <div class="form-group">
+                        <label for="fullName">Nombre completo *</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </div>
+
+                <!-- Dirección de Envío -->
+                <div class="form-section" id="deliverySection">
+                    <h5>Dirección de Envío</h5>
+                    <div class="form-group">
+                        <label for="address">Dirección *</label>
+                        <input type="text" id="address">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">Ciudad *</label>
+                            <input type="text" id="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">Código Postal *</label>
+                            <input type="text" id="zipCode">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información de Pago -->
+                <div class="form-section">
+                    <h5>Información de Pago</h5>
+                    <div class="form-group">
+                        <label for="cardNumber">Número de Tarjeta *</label>
+                        <input type="text" id="cardNumber" maxlength="16">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expDate">Fecha de Vencimiento *</label>
+                            <input type="text" id="expDate" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV *</label>
+                            <input type="text" id="cvv" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="modal-btn cancel" id="cancelCheckout">Cancelar</button>
+                    <button type="submit" class="modal-btn confirm">Confirmar Compra</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-button" id="chatButton">💬</button>
+        <div class="chat-window" id="chatWindow">
+            <!-- El contenido del chat se cargará desde chat.js -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/cart.js"></script>
+    <script src="../js/chat.js"></script>
+</body>
+</html>
